@@ -10,7 +10,7 @@
 
 @implementation Webservice
 
--(id)init {
+-(instancetype)init {
 	self = [super init];
 	if (self != nil) {
         self.OperationQueue = [[NSOperationQueue alloc]
