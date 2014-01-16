@@ -15,6 +15,7 @@
 #pragma mark - Content Types
 #define CONTENT_TYPE_XML @"text/xml; charset=utf-8"
 #define CONTENT_TYPE_JSON @"application/json"
+#define CONTENT_TYPE_FORM_ENCODED @"application/x-www-form-urlencoded"
 
 #pragma mark - HTTP Status Codes
 #pragma mark Informational 1xx
@@ -43,7 +44,7 @@
 #pragma mark Client Error 4xx
 #define HTTP_STATUS_CODE_BAD_REQUEST 400
 #define HTTP_STATUS_CODE_UNAUTHORIZED 401
-#define HTTP_STATUS_CODE_PAYEMENT_REQUIRED 402
+#define HTTP_STATUS_CODE_PAYMENT_REQUIRED 402
 #define HTTP_STATUS_CODE_FORBIDDEN 403
 #define HTTP_STATUS_CODE_NOT_FOUND 404
 #define HTTP_STATUS_CODE_METHOD_NOT_ALLOWED 405

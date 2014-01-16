@@ -81,14 +81,8 @@
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:10.0];
     [request setHTTPBody:data];
     [request setHTTPMethod:httpMethod];
+    [request setAllHTTPHeaderFields:(headers ? headers : @{})];
     [request setValue:contentType forHTTPHeaderField:@"Content-Type"];
-    
-    //Add headers
-    if (headers) {
-        [headers enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-            [request addValue:(NSString *)obj forHTTPHeaderField:(NSString *)key];
-        }];
-    }
     
     //Set request and completion block
     self.completionBlock = block;
