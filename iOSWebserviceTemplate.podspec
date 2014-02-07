@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "iOS Webservice Template"
+  s.name         = "iOSWebserviceTemplate"
   s.version      = "1.0.0"
   s.summary      = "A template for binding to webservices using NSOperation and NSOperationQueue."
   s.homepage     = "https://github.com/uacaps/iOSWebserviceTemplate"
