@@ -34,7 +34,7 @@
 
 #pragma mark - Master Request Methods
 -(void)setRequestWithBodyData:(NSData *)data forHttpMethod:(NSString *)httpMethod url:(NSString *)url contentType:(NSString *)contentType  completion:(void (^)(void))block;
--(void)setRequestForCommandWithBodyData:(NSData *)data forHttpMethod:(NSString *)httpMethod url:(NSString *)url headers:(NSDictionary *)headers contentType:(NSString *)contentType completion:(void (^)(void))block;
+-(void)setRequestWithBodyData:(NSData *)data forHttpMethod:(NSString *)httpMethod url:(NSString *)url headers:(NSDictionary *)headers contentType:(NSString *)contentType completion:(void (^)(void))block;
 
 #pragma mark - Status Code Checking
 -(BOOL)responseStatusCodeIsInformational;

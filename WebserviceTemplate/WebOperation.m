@@ -21,62 +21,62 @@
 #pragma mark - JSON Request Methods
 
 -(void)setJsonRequestWithBodyData:(NSData *)data forHttpMethod:(NSString *)httpMethod url:(NSString *)url  completion:(void (^)(void))block{
-    [self setRequestForCommandWithBodyData:data forHttpMethod:httpMethod url:url headers:nil contentType:CONTENT_TYPE_JSON completion:block];
+    [self setRequestWithBodyData:data forHttpMethod:httpMethod url:url headers:nil contentType:CONTENT_TYPE_JSON completion:block];
 }
 
 -(void)setJsonRequestWithBodyData:(NSData *)data forHttpMethod:(NSString *)httpMethod url:(NSString *)url headers:(NSDictionary *)headers completion:(void (^)(void))block{
-    [self setRequestForCommandWithBodyData:data forHttpMethod:httpMethod url:url headers:headers contentType:CONTENT_TYPE_JSON completion:block];
+    [self setRequestWithBodyData:data forHttpMethod:httpMethod url:url headers:headers contentType:CONTENT_TYPE_JSON completion:block];
 }
 
 -(void)setJsonGetRequestWithUrl:(NSString *)url  completion:(void (^)(void))block{
-    [self setRequestForCommandWithBodyData:nil forHttpMethod:HTTP_METHOD_GET url:url headers:nil contentType:CONTENT_TYPE_JSON completion:block];
+    [self setRequestWithBodyData:nil forHttpMethod:HTTP_METHOD_GET url:url headers:nil contentType:CONTENT_TYPE_JSON completion:block];
 }
 
 -(void)setJsonGetRequestWithUrl:(NSString *)url headers:(NSDictionary *)headers completion:(void (^)(void))block{
-    [self setRequestForCommandWithBodyData:nil forHttpMethod:HTTP_METHOD_GET url:url headers:headers contentType:CONTENT_TYPE_JSON completion:block];
+    [self setRequestWithBodyData:nil forHttpMethod:HTTP_METHOD_GET url:url headers:headers contentType:CONTENT_TYPE_JSON completion:block];
 }
 
 -(void)setJsonDeleteRequestWithUrl:(NSString *)url  completion:(void (^)(void))block{
-    [self setRequestForCommandWithBodyData:nil forHttpMethod:HTTP_METHOD_DELETE url:url headers:nil contentType:CONTENT_TYPE_JSON completion:block];
+    [self setRequestWithBodyData:nil forHttpMethod:HTTP_METHOD_DELETE url:url headers:nil contentType:CONTENT_TYPE_JSON completion:block];
 }
 
 -(void)setJsonDeleteRequestWithUrl:(NSString *)url headers:(NSDictionary *)headers completion:(void (^)(void))block{
-    [self setRequestForCommandWithBodyData:nil forHttpMethod:HTTP_METHOD_DELETE url:url headers:nil contentType:CONTENT_TYPE_JSON completion:block];
+    [self setRequestWithBodyData:nil forHttpMethod:HTTP_METHOD_DELETE url:url headers:nil contentType:CONTENT_TYPE_JSON completion:block];
 }
 
 #pragma mark - XML Request Methods
 
 -(void)setXmlRequestWithBodyData:(NSData *)data forHttpMethod:(NSString *)httpMethod url:(NSString *)url  completion:(void (^)(void))block{
-    [self setRequestForCommandWithBodyData:data forHttpMethod:httpMethod url:url headers:nil contentType:CONTENT_TYPE_XML completion:block];
+    [self setRequestWithBodyData:data forHttpMethod:httpMethod url:url headers:nil contentType:CONTENT_TYPE_XML completion:block];
 }
 
 -(void)setXmlRequestWithBodyData:(NSData *)data forHttpMethod:(NSString *)httpMethod url:(NSString *)url headers:(NSDictionary *)headers completion:(void (^)(void))block{
-    [self setRequestForCommandWithBodyData:data forHttpMethod:httpMethod url:url headers:headers contentType:CONTENT_TYPE_XML completion:block];
+    [self setRequestWithBodyData:data forHttpMethod:httpMethod url:url headers:headers contentType:CONTENT_TYPE_XML completion:block];
 }
 
 -(void)setXmlGetRequestWithUrl:(NSString *)url  completion:(void (^)(void))block{
-    [self setRequestForCommandWithBodyData:nil forHttpMethod:HTTP_METHOD_GET url:url headers:nil contentType:CONTENT_TYPE_XML completion:block];
+    [self setRequestWithBodyData:nil forHttpMethod:HTTP_METHOD_GET url:url headers:nil contentType:CONTENT_TYPE_XML completion:block];
 }
 
 -(void)setXmlGetRequestWithUrl:(NSString *)url headers:(NSDictionary *)headers completion:(void (^)(void))block{
-    [self setRequestForCommandWithBodyData:nil forHttpMethod:HTTP_METHOD_GET url:url headers:headers contentType:CONTENT_TYPE_XML completion:block];
+    [self setRequestWithBodyData:nil forHttpMethod:HTTP_METHOD_GET url:url headers:headers contentType:CONTENT_TYPE_XML completion:block];
 }
 
 -(void)setXmlDeleteRequestWithUrl:(NSString *)url  completion:(void (^)(void))block{
-    [self setRequestForCommandWithBodyData:nil forHttpMethod:HTTP_METHOD_DELETE url:url headers:nil contentType:CONTENT_TYPE_XML completion:block];
+    [self setRequestWithBodyData:nil forHttpMethod:HTTP_METHOD_DELETE url:url headers:nil contentType:CONTENT_TYPE_XML completion:block];
 }
 
 -(void)setXmlDeleteRequestWithUrl:(NSString *)url headers:(NSDictionary *)headers completion:(void (^)(void))block{
-    [self setRequestForCommandWithBodyData:nil forHttpMethod:HTTP_METHOD_DELETE url:url headers:nil contentType:CONTENT_TYPE_XML completion:block];
+    [self setRequestWithBodyData:nil forHttpMethod:HTTP_METHOD_DELETE url:url headers:nil contentType:CONTENT_TYPE_XML completion:block];
 }
 
 #pragma mark - Master Request Methods
 
 -(void)setRequestWithBodyData:(NSData *)data forHttpMethod:(NSString *)httpMethod url:(NSString *)url contentType:(NSString *)contentType  completion:(void (^)(void))block{
-    [self setRequestForCommandWithBodyData:data forHttpMethod:httpMethod url:url headers:nil contentType:contentType completion:block];
+    [self setRequestWithBodyData:data forHttpMethod:httpMethod url:url headers:nil contentType:contentType completion:block];
 }
 
--(void)setRequestForCommandWithBodyData:(NSData *)data forHttpMethod:(NSString *)httpMethod url:(NSString *)url headers:(NSDictionary *)headers contentType:(NSString *)contentType completion:(void (^)(void))block{
+-(void)setRequestWithBodyData:(NSData *)data forHttpMethod:(NSString *)httpMethod url:(NSString *)url headers:(NSDictionary *)headers contentType:(NSString *)contentType completion:(void (^)(void))block{
     //Create request
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:10.0];
     [request setHTTPBody:data];
